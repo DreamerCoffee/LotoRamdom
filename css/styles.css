@@ -1,0 +1,262 @@
+:root {
+    /* Colores Base */
+    --color-background: #f0f0f0;
+    --color-white: #ffffff;
+    --color-text-primary: #4A4A4A;
+    --color-primary: #FFB43D;
+    --color-primary-hover: #ff9800;
+    
+    /* Colores Balotas */
+    --color-ballot-grey: #D8D8D8;
+    --color-ballot-red-baloto: #DA7979;
+
+    --color-ballot-yellow: #FFD700;    
+    --color-ballot-blue: #4169E1;
+    --color-ballot-red: #DC143C;
+    --color-ballot-green: #228B22;
+    --color-ballot-white: #FFFFFF;
+    --boder-ballot-white: 4px solid #D8D8D8;
+    --color-ballot-black: #000000;
+
+    /* Efectos */
+    --shadow-sm: rgba(0, 0, 0, 0.1);
+    --transition-default: all 0.3s ease;
+    
+    /* Tamaños */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    
+    /* Fuentes */
+    --font-family-main: 'Arial', sans-serif;
+    --font-family-numbers: 'Martian Mono', monospace;
+    
+    /* Bordes */
+    --border-radius-sm: 30px;
+    --border-radius-md: 60px;
+    
+    /* Dark Theme (preparado para futuro) */
+    --dark-background: #1a1a1a;
+    --dark-text: #ffffff;
+    --dark-ballot: #2d2d2d;
+}
+
+/* Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-main);
+    background-color: var(--color-background);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+/* Layout */
+.container {
+    max-width: 750px;
+    max-height: 650px;
+    padding: var(--spacing-md);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 2px 5px var(--shadow-sm);
+    display: grid;
+    place-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Componente: Header */
+.header {
+    text-align: center;
+}
+
+.header img {
+    height: 64px;
+}
+
+.header__title {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.header__author {
+    font-size: 1.25rem;
+}
+
+.header__author-link {
+    color: #B3764B;
+    text-decoration: none;
+    transition: var(--transition-default);
+}
+
+.header__author-link:hover {
+    opacity: 0.8;
+}
+
+/* Componente: Select */
+.game-select {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    height: 40px;
+    width: 220px;
+    padding: 0 var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1rem;
+    transition: var(--transition-default);
+    cursor: pointer;
+}
+
+.game-select:hover {
+    background-color: var(--color-ballot-grey);
+}
+
+/* Componente: Numbers Container */
+.numbers-container {
+    background-color: var(--color-background);
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+}
+
+/* Componente: Ballot */
+.ballot {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 44px;
+    color: var(--color-text-primary);
+    font-family: var(--font-family-numbers);
+    transition: var(--transition-default);
+}
+
+.ballot:hover {
+    transform: scale(1.05);
+}
+
+.ballot--grey {
+    background-color: var(--color-ballot-grey);
+}
+
+.ballot--red--baloto {
+    background-color: var(--color-ballot-red-baloto);
+}
+
+/* ColorLoto */
+
+.ballot--yellow {
+    background-color: var(--color-ballot-yellow);
+    color: #000000;
+}
+
+.ballot--blue {
+    background-color: var(--color-ballot-blue);
+    color: #FFFFFF;
+}
+
+.ballot--red {
+    background-color: var(--color-ballot-red);
+    color: #FFFFFF;
+}
+
+.ballot--green {
+    background-color: var(--color-ballot-green);
+    color: #FFFFFF;
+}
+
+.ballot--white {
+    background-color: var(--color-ballot-white);
+    color: #141414;
+    border: var(--boder-ballot-white)
+}
+
+.ballot--black {
+    background-color: var(--color-ballot-black);
+    color: #FFFFFF;
+}
+
+/* Componente: Refresh Button */
+.refresh-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    height: 60px;
+    width: 175px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: var(--transition-default);
+}
+
+.refresh-button:hover {
+    background-color: var(--color-primary-hover);
+    transform: scale(1.02);
+}
+
+.refresh-button__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.refresh-button__icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Utilidades */
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-sm);
+        border-radius: var(--border-radius-sm);
+    }
+
+    .ballot {
+        width: 70px;
+        height: 70px;
+        font-size: 36px;
+    }
+
+    .refresh-button {
+        width: 150px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .header__title {
+        font-size: 3rem;
+    }
+}
+
+/* Animaciones */
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.ballot {
+    animation: popIn 0.3s ease-out;
+}

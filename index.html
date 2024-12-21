@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de números aleatorios para lotería con múltiples modos de juego">
+    <meta name="keywords" content="lotería, números aleatorios, baloto, generador">
+    <meta name="author" content="DreamerCoffee">
+    
+    <title>LotoRandom</title>
+    
+    <!-- lotoIcon -->
+    <link rel="icon" type="image/x-icon" href="imgs/lotoIcon.svg">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <img src="imgs/LotoLogo.svg" alt="Logo">
+            <h1 class="header__title">LotoRandom</h1>
+            <span class="header__author">
+                <a class="header__author-link" target="_blank" href="https://github.com/DreamerCoffee" rel="noopener">
+                    By: DreamerCoffee
+                </a>
+            </span>
+        </header>
+
+        <select id="gameMode" class="game-select">
+            <option value="baLoto">Baloto</option>
+            <option value="colorLoto">ColorLoto</option>
+            <option value="miLoto">MiLoto</option>
+        </select>
+
+        <div id="baloto" class="numbers-container">
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--red--baloto">00</div>
+        </div>
+
+        <div id="colorLoto" class="numbers-container hidden">
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+        </div>
+
+        <div id="miLoto" class="numbers-container hidden">
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+            <div class="ballot ballot--grey">00</div>
+        </div>
+
+        <button class="refresh-button" aria-label="Generar nuevos números">
+            <div class="refresh-button__content">
+                <img class="refresh-button__icon" src="imgs/refresh.png" alt="Refrescar" />
+                <span>Refresh</span>
+            </div>
+        </button>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
