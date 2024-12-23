@@ -31,20 +31,21 @@ export class GameLogic {
     }
 
     static generateColorLotoNumbers() {
-        // Generar 6 números únicos entre 1 y 7
-        const numbers = NumberGenerator.generateUniqueNumbers(6, 1, 7);
-        
-        // Generar colores aleatorios (pueden repetirse)
-        const colors = Array(6).fill().map(() => {
-            const colorKeys = Object.values(this.COLORS);
-            const randomIndex = NumberGenerator.generateRandomNumber(0, colorKeys.length - 1);
-            return colorKeys[randomIndex];
-        });
+    // Generate 6 numbers that can repeat (1-7)
+    const numbers = Array(6).fill().map(() => 
+        NumberGenerator.generateRandomNumber(1, 7)
+    );
+    
+    // Generate random colors (can repeat)
+    const colors = Array(6).fill().map(() => {
+        const colorKeys = Object.values(this.COLORS);
+        const randomIndex = NumberGenerator.generateRandomNumber(0, colorKeys.length - 1);
+        return colorKeys[randomIndex];
+    });
 
-        // Combinar números y colores
-        return {
-            numbers,
-            colors
-        };
+    return {
+        numbers,
+        colors
+    };
     }
 }
